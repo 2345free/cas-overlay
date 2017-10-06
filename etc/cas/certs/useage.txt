@@ -1,0 +1,7 @@
+这里我的CAS服务端是部署在本地的，所以需要做一个本地映射——
+用管理员身份修改C:\Windows\System32\drivers\etc\hosts文件，在其最后加上以下内容：
+127.0.0.1       cas.example.org
+这样，我们在本地访问这个域名，其实访问的就是我们本机了。
+
+# 导入证书到java cacerts中
+keytool -import -alias cas -keystore JAVA_HOME/jre/lib/security/cacerts -file ./cas.cer
