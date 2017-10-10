@@ -5,6 +5,7 @@
 
 1) [推荐]使用内置的tomcat启动项目(证书已经配置在application.properties): java -jar cas.war
 或者
-2) # 导入证书到java cacerts中(适用于使用外部tomcat容器)
-keytool -import -alias cas -keystore JAVA_HOME/jre/lib/security/cacerts -file ./cas.cer
-启动外部tomcat
+2) # 导入证书到java cacerts中(适用于使用外部tomcat容器), 注意:需要登录认证的客户端jdk也需要导入cas服务器的证书
+keytool -import -alias cas -keystore "%JAVA_HOME%/jre/lib/security/cacerts" -file ./cas.cer
+回车后输入密码:changeit, 然后输入y回车信任证书即可
+把cas.war放到tomcat的webapps下启动tomcat,访问https://cas.example.org:8443/cas
