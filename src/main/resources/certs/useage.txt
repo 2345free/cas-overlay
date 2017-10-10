@@ -9,3 +9,5 @@
 keytool -import -alias cas -keystore "%JAVA_HOME%/jre/lib/security/cacerts" -file ./cas.cer
 回车后输入密码:changeit, 然后输入y回车信任证书即可
 把cas.war放到tomcat的webapps下启动tomcat,访问https://cas.example.org:8443/cas
+
+# 打包方式: 运行项目跟目录下的build.cmd clean package即可生成war包.
