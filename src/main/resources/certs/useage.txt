@@ -5,7 +5,7 @@ C:\Windows\System32\drivers\etc\hosts
 127.0.0.1       cas.example.org
 这样,我们在本地访问这个域名,其实访问的就是我们本机.
 
-# 打包方式: 运行项目跟目录下的build.cmd clean package即可生成war包.
+# 打包方式: 运行项目跟目录下的mvn clean package即可生成war包.
 
 部署启动方式(2选1):
 1) [推荐]使用内置的tomcat启动项目(证书已经配置在application.properties): java -jar target\cas.war
