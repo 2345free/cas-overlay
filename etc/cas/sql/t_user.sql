@@ -1,3 +1,5 @@
+use test;
+drop table if exists t_user;
 CREATE TABLE `t_user` (
 	`id` INT(11) NOT NULL AUTO_INCREMENT,
 	`username` VARCHAR(50) NOT NULL COMMENT '用户名',
@@ -6,5 +8,6 @@ CREATE TABLE `t_user` (
 )
 COMMENT='用户表'
 COLLATE='utf8_general_ci'
-ENGINE=InnoDB
-;
+ENGINE=InnoDB;
+
+INSERT INTO test.t_user (username, password) VALUES ('admin', '40bd001563085fc35165329ea1ff5c5ecbdbbeef');

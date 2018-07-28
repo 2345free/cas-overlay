@@ -19,6 +19,7 @@ public class CustomPasswordEncoder implements PasswordEncoder {
     private String encodingAlgorithm = "SHA1";
     private String characterEncoding = "UTF-8";
 
+    @Override
     public String encode(CharSequence password) {
         if (password == null) {
             return null;
@@ -41,6 +42,7 @@ public class CustomPasswordEncoder implements PasswordEncoder {
         }
     }
 
+    @Override
     public boolean matches(CharSequence rawPassword, String encodedPassword) {
         String encodedRawPassword = StringUtils.isNotBlank(rawPassword) ? this.encode(rawPassword.toString()) : null;
         boolean matched = StringUtils.equals(encodedRawPassword, encodedPassword);

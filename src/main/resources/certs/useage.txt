@@ -1,13 +1,20 @@
-这里我的CAS服务端是部署在本地的，所以需要做一个本地映射——
-用管理员身份修改C:\Windows\System32\drivers\etc\hosts文件，在其最后加上以下内容：
+这里我的CAS服务端是部署在本地的,所以需要做一个本地映射:
+用管理员身份修改
+C:\Windows\System32\drivers\etc\hosts
+文件,在其最后加上以下内容:
 127.0.0.1       cas.example.org
-这样，我们在本地访问这个域名，其实访问的就是我们本机了。
+这样,我们在本地访问这个域名,其实访问的就是我们本机.
 
-1) [推荐]使用内置的tomcat启动项目(证书已经配置在application.properties): java -jar cas.war
+# 打包方式: 运行项目跟目录下的build.cmd clean package即可生成war包.
+
+部署启动方式(2选1):
+1) [推荐]使用内置的tomcat启动项目(证书已经配置在application.properties): java -jar target\cas.war
 或者
 2) # 导入证书到java cacerts中(适用于使用外部tomcat容器), 注意:需要登录认证的客户端jdk也需要导入cas服务器的证书
 keytool -import -alias cas -keystore "%JAVA_HOME%/jre/lib/security/cacerts" -file ./cas.cer
 回车后输入密码:changeit, 然后输入y回车信任证书即可
-把cas.war放到tomcat的webapps下启动tomcat,访问https://cas.example.org:8443/cas
+把cas.war放到tomcat的webapps下启动tomcat
 
-# 打包方式: 运行项目跟目录下的build.cmd clean package即可生成war包.
+浏览器访问:
+https://cas.example.org:8443/cas
+用户名/密码: admin/124
