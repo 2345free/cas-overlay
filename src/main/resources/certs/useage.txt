@@ -17,4 +17,4 @@ keytool -import -alias cas -keystore "%JAVA_HOME%/jre/lib/security/cacerts" -fil
 
 浏览器访问:
 https://cas.example.org:8443/cas
-用户名/密码: admin/124
+用户名/密码: admin/123
