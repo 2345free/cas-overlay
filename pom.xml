@@ -46,6 +46,9 @@
                         <overlay>
                             <groupId>org.apereo.cas</groupId>
                             <artifactId>cas-server-webapp${app.server}</artifactId>
+                            <excludes>
+                                <exclude>WEB-INF/classes/services/*</exclude>
+                            </excludes>
                         </overlay>
                     </overlays>
                 </configuration>
@@ -85,11 +88,13 @@
             <artifactId>cas-server-support-jdbc</artifactId>
             <version>${cas.version}</version>
         </dependency>
+        <!--
         <dependency>
             <groupId>org.apereo.cas</groupId>
             <artifactId>cas-server-support-jdbc-drivers</artifactId>
             <version>${cas.version}</version>
         </dependency>
+        -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>

@@ -1,0 +1,9 @@
+{
+  "@class": "org.apereo.cas.services.RegexRegisteredService",
+  "serviceId": "^(https|http)://(\\w+.)?client.com.*",
+  "name": "*.client.com",
+  "id": 1001,
+  "description": "*.client.com service",
+  "evaluationOrder": 1,
+  "logoutType": "BACK_CHANNEL"
+}
