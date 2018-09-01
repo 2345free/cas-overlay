@@ -7,11 +7,14 @@ C:\Windows\System32\drivers\etc\hosts
 
 # 打包方式: 运行项目跟目录下的mvn clean package即可生成war包.
 
+初始化数据库:
+执行resources/db/t_user.sql
+
 部署启动方式(2选1):
 1) [推荐]使用内置的tomcat启动项目(证书已经配置在application.properties): java -jar target\cas.war
 或者
 2) # 导入证书到java cacerts中(适用于使用外部tomcat容器), 注意:需要登录认证的客户端jdk也需要导入cas服务器的证书
-keytool -import -alias cas -keystore "%JAVA_HOME%/jre/lib/security/cacerts" -file ./cas.cer
+keytool -import -alias cas -keystore "%JAVA_HOME%/jre/lib/security/cacerts" -file resources/certs/cas.cer
 回车后输入密码:changeit, 然后输入y回车信任证书即可
 把cas.war放到tomcat的webapps下启动tomcat
 
